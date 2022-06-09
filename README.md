@@ -1,8 +1,8 @@
 # Welcome to the Game Master's Companion
 
-This application is a supplement for Game Masters who wish to run a Legendary campaign. Legendary is a fantasy role-playing game written by Matthew Martin, and is available for purchase from [Amazon](https://www.amazon.com/dp/1794769862/ref=cm_sw_em_r_mt_dp_MD2F6YP1VVFWFS8RTD7R).
+This application is a supplement for Game Masters who wish to run a [Legendary](https://thelegendarygame.com/) campaign. Legendary is a fantasy role-playing game written by Matthew Martin, and is available for purchase from [Amazon](https://www.amazon.com/dp/1794769862/ref=cm_sw_em_r_mt_dp_MD2F6YP1VVFWFS8RTD7R).
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). It is open source and free for all use.
 
 ## Getting Started
 
@@ -38,6 +38,14 @@ The game time is based on the Calendar of Mystra. A random date is selected when
 ### Weather
 
 The weather pulls random data from the OpenWeather API. A list of cities across Europe are used as the basis. You can click the refresh icon to update the weather accordingly.
+
+You will need to get an API key from [OpenWeather](https://openweathermap.org/api) in order to use this card. The API key is housed in the `.env` (or `.env.local`) file like so:
+
+```
+NEXT_PUBLIC_OPENWEATHER_API_KEY = 'MyAPIKey'
+```
+
+Once you have done that, the weather should load normally.
 
 ![This is an example of weather.](/public/img/Weather.png)
 
