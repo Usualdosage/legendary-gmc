@@ -15,8 +15,11 @@ npm run dev
 # or
 yarn dev
 ```
-
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
+
+## Troubleshooting
+
+- Ensure you're using the latest node version when executing the application, as well as npm.
 
 ## Loading and Saving Campaigns
 
