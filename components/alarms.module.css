@@ -1,0 +1,15 @@
+.toastAlert {
+    background-color: Red;
+    border-radius: 3px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 200px;
+    border: solid 1px #333;
+    box-shadow: #000 5px 5px 5px;
+    text-align: left;
+    padding: 6px;
+    color: #fff;
+    display: block;
+    font-size: .75em;
+}

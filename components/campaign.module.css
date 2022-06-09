@@ -1,0 +1,17 @@
+.campaign {
+    margin-top: 300px !important;
+}
+
+.campaignInput {
+    margin-top: 0px;
+    margin-right: 10px;
+    border-radius: 5px;
+    background-color: #ccc;
+    margin-right: 10px;
+    padding: 5px;
+    font-size: .9em;
+}
+
+.validator {
+    color: Red;
+}

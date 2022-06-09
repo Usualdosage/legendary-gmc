@@ -1,0 +1,11 @@
+.timerElapsed {
+    font-size: 1.4em;
+    color: lightgreen;
+}
+
+.timerName {
+    text-align: center;
+    background: none;
+    border: solid 1px #333;
+    color: #aaa;
+}

@@ -1,0 +1,98 @@
+$theme-colors: (
+  'primary': #145bea,
+  'secondary': #833bec,
+  'success': #1ce1ac,
+  'info': #ff7d50,
+  'warning': #ffbe0b,
+  'danger': #ff007f,
+  'light': #c0ccda,
+  'dark': #444,
+);
+
+$body-color: #ccc;
+
+@import '/node_modules/bootstrap/scss/mdb.free.scss';
+@import '/node_modules/bootstrap/scss/bootstrap.scss';
+
+.loginBanner
+{
+  background-image: url('/img/Mystra.jpg');
+  background-size: cover;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+}
+
+.campaignCard
+{
+  position: absolute;
+  top: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 3px 3px 6px #000;
+}
+
+.centerOnPage
+{
+  position: fixed;
+  height: 100vh;  
+  width: 100%;
+  top: 0px;
+  left: 0px;
+}
+
+#diceContainer {
+  height: 35vh;
+}
+
+input[type=number] {
+  width: 100%;
+  text-align: center;
+}
+
+fieldset {
+  border: solid 1px #333;
+  border-radius: 3px;
+  padding: 10px;
+}
+
+input[type=checkbox] {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+fieldset>legend {
+  font-size: .8em;
+}
+
+fieldset>legend>span {
+  padding-left: 5px;
+  vertical-align: middle;
+  height: 17px;
+  display: inline-block;
+}
+
+textarea {
+  width: 100%;
+  border-radius: 5px;
+  background-color: #ccc;
+  margin: 3px;
+}
+
+.hidden {
+  display: none;
+}
+
+.cardBody {
+  min-height: 180px;
+}
+
+.bg-dark .list-group-item {
+  color: rgb(204, 204, 204);
+}
+
+.control-label {
+  float: left;
+  font-size: .6em;
+  color: #ccc;
+}

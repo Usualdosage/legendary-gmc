@@ -1,0 +1,27 @@
+.navbar .breadcrumb .breadcrumb-item a {
+    color: Red;
+}
+
+.breadcrumb-item.active {
+    color: #ccc;
+}
+
+.breadcrumb-loc {
+    font-weight: bold;
+}
+
+.abandon_campaign {
+    color: Red;
+}
+
+.header {
+    border-bottom: solid 1px #666;
+}
+
+.campaignName {
+    border: none;
+    background: none;
+    font-size: 1.5em;
+    color: #ccc;
+    text-align: center;
+}
