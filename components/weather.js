@@ -3,6 +3,7 @@ import { getRandomNumber } from "../components/utils";
 import { Button, OverlayTrigger, Card, Tooltip } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRefresh } from "@fortawesome/free-solid-svg-icons";
+import { Log } from "../components/logger";
 
 class Time extends Component {
     constructor(props) {
@@ -91,9 +92,7 @@ class Time extends Component {
     getWeather() {
         let key = this.getRandomLocation();
         let url =
-            "https://api.openweathermap.org/data/2.5/weather?q=" +
-            key +
-            "&units=imperial&appid=21937b4847733376896a8d3d2eb7f696";
+            `https://api.openweathermap.org/data/2.5/weather?q=${key}&units=imperial&appid=${process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY}`;
         var result = fetch(url)
             .then((response) => response.json())
             .then((data) => {
@@ -126,7 +125,7 @@ class Time extends Component {
 
                     this.imageRef.current.src = this.getWeatherIcon(data.weather[0].icon);
                 } catch {
-                    console.log("Error loading weather.");
+                    Log(`Error loading weather. ApiKey: ${process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY}`);
                 }
             });
     }

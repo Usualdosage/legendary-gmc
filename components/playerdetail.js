@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { MAX_PLAYERS } from "../components/const";
 import styles from "./player.module.css";
+import { Log } from "../components/logger";
 
 class PlayerDetail extends Component {
     state = {
@@ -55,7 +56,7 @@ class PlayerDetail extends Component {
         var campaign = loadActiveCampaign();
 
         if (campaign.players == null) {
-            console.log("Initializing players...");
+            Log("Initializing players...");
             campaign.players = [];
             for (let x = 0; x < MAX_PLAYERS; x++) campaign.players[x] = {};
         }

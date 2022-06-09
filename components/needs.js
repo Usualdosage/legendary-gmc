@@ -18,6 +18,7 @@ import {
     faRefresh,
 } from "@fortawesome/free-solid-svg-icons";
 import { loadActiveCampaign, saveActiveCampaign } from "./utils";
+import { Log } from "../components/logger";
 
 class Needs extends Component {
     state = {
@@ -34,7 +35,7 @@ class Needs extends Component {
         const campaign = loadActiveCampaign();
 
         if (campaign.needs === null) {
-            console.log("Creating needs...");
+            Log("Creating needs...");
 
             campaign.needs = {
                 hunger: 0,
@@ -44,7 +45,7 @@ class Needs extends Component {
 
             saveActiveCampaign(campaign);
 
-            console.log("Saved needs.");
+            Log("Saved needs.");
         }
 
         this.checkNeeds(campaign.needs);

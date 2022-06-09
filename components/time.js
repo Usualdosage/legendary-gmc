@@ -14,6 +14,7 @@ import {
     faRefresh,
 } from "@fortawesome/free-solid-svg-icons";
 import { loadActiveCampaign, saveActiveCampaign } from "../components/utils";
+import { Log } from "../components/logger";
 
 class Time extends Component {
     constructor(props) {
@@ -28,10 +29,10 @@ class Time extends Component {
 
         // If we have don't have a saved date, randomize one
         if (campaign.date === null) {
-            console.log("Creating random campaign date...");
+            Log("Creating random campaign date...");
             campaign.date = this.getRandomDate();
             saveActiveCampaign(campaign);
-            console.log("Saved date.");
+            Log("Saved date.");
         }
 
         this.displayDate(campaign.date);

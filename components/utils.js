@@ -1,3 +1,5 @@
+import { Log } from "../components/logger";
+
 /**
  * Loads the active campaign.
  */
@@ -29,7 +31,7 @@
     const campaigns = JSON.parse(localStorage.getItem("dmc_campaigns"));
     const campaign = loadActiveCampaign();
    
-    console.log(campaign);
+    Log(campaign);
    
     let index = campaigns.findIndex((obj) => {
       return obj.name.toLowerCase() === campaign.name.toLowerCase();

@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faDice } from "@fortawesome/free-solid-svg-icons";
 import { MAX_MONSTERS } from "../components/const";
 import styles from "./monster.module.css";
+import { Log } from "../components/logger";
 
 class Monster extends Component {
     state = {
@@ -29,7 +30,7 @@ class Monster extends Component {
         var campaign = loadActiveCampaign();
 
         if (campaign.monsters == null) {
-            console.log("Initializing monsters...");
+            Log("Initializing monsters...");
             campaign.monsters = [];
             for (let x = 0; x < MAX_MONSTERS; x++) campaign.monsters[x] = { id: x };
         }

@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { Col, Row, Badge } from "react-bootstrap";
 import styles from "./player.module.css";
 import { MAX_PLAYERS } from "../components/const";
+import { Log } from "../components/logger";
 
 class Player extends Component {
     state = {
@@ -27,7 +28,7 @@ class Player extends Component {
         var campaign = loadActiveCampaign();
 
         if (campaign.players == null) {
-            console.log("Initializing players...");
+            Log("Initializing players...");
             campaign.players = [];
             for (let x = 0; x < MAX_PLAYERS; x++) campaign.players[x] = {};
         }

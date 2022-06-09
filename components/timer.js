@@ -10,6 +10,7 @@ import {
 import { loadActiveCampaign, saveActiveCampaign } from "./utils";
 import { MAX_TIMERS } from "../components/const";
 import styles from "./timer.module.css";
+import { Log } from "../components/logger";
 
 class Timer extends Component {
     constructor(props) {
@@ -28,7 +29,7 @@ class Timer extends Component {
     }
 
     initializeTimers = (timers) => {
-        console.log("Initializing timers...");
+        Log("Initializing timers...");
 
         if (timers === null) timers = [];
 
@@ -155,7 +156,6 @@ class Timer extends Component {
                         this.pauseRef.current.className.replace("disabled", "");
                     break;
                 case 2: // Pause
-                    console.log("click");
                     clearInterval(timer.interval);
                     this.formatTime(timer.value);
                     timer.isStarted = false;
