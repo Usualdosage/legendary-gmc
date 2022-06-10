@@ -43,7 +43,8 @@ class Map extends Component {
         brushWidth: 50,
         penWidth: 5,
         mapPaths: [],
-        selectedMap: ""
+        selectedMap: "",
+        canvasScale: 1.0
     };
 
     constructor(props) {
@@ -265,12 +266,7 @@ class Map extends Component {
     }
 
     changeGridSize(e) {
-        let canvas = this.canvasRef.current;
-        const ctx = canvas.getContext("2d");
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        this.setState({ radius: e.target.value });
-        this.resizeCanvasToDisplaySize();
-        this.drawGrid();
+        this.setState({ canvasScale: e.target.value})
     }
 
     render() {
@@ -286,6 +282,9 @@ class Map extends Component {
             backgroundPositionY: this.state.imagePosAfter.y + "px",
             backgroundImage: "url('" + this.state.selectedMap + "')",
         };
+        let canvasStyle = {
+            transform: "scale(" + this.state.canvasScale + ")",
+        }
         return (
             <Row centered>
                 <Col md={12}>
@@ -299,7 +298,7 @@ class Map extends Component {
                     </Dropdown>
                     <Modal
                         bg="dark"
-                        centered
+                        centered="true"
                         fullscreen
                         show={this.state.show}
                         onHide={this.handleClose}
@@ -330,10 +329,22 @@ class Map extends Component {
                                 <canvas
                                     ref={this.canvasRef}
                                     className={styles.mapCanvas}
+                                    style={canvasStyle}
                                 ></canvas>
                             </div>
                         </Modal.Body>
                         <Modal.Footer className="bg-dark">
+                        <FontAwesomeIcon icon={faTableCells} />
+                            <input
+                                type="range"
+                                min="1"
+                                max="5"
+                                step=".1"
+                                defaultValue="1"
+                                className="slider"
+                                onChange={(e) => this.changeGridSize(e)}
+                                ref={this.gridSizeRef}
+                            />
                             <FontAwesomeIcon icon={faEdit} />
                             <input
                                 type="range"

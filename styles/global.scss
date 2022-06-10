@@ -14,12 +14,29 @@ $body-color: #ccc;
 @import '/node_modules/bootstrap/scss/mdb.free.scss';
 @import '/node_modules/bootstrap/scss/bootstrap.scss';
 
+.btn-close
+{
+  color: #ccc !important;
+}
+
 .loginBanner
 {
   background-image: url('/img/Mystra.jpg');
   background-size: cover;
+  background-position: center;
   filter: blur(5px);
   -webkit-filter: blur(5px);
+  transition: all .3s;
+}
+
+.loginBanner:hover
+{
+  background-image: url('/img/Mystra.jpg');
+  background-size: cover;
+  filter: none;
+  background-position: center;
+  -webkit-filter: none;
+  transition: all .3s;
 }
 
 .campaignCard
@@ -29,15 +46,6 @@ $body-color: #ccc;
   margin-left: auto;
   margin-right: auto;
   box-shadow: 3px 3px 6px #000;
-}
-
-.centerOnPage
-{
-  position: fixed;
-  height: 100vh;  
-  width: 100%;
-  top: 0px;
-  left: 0px;
 }
 
 #diceContainer {
