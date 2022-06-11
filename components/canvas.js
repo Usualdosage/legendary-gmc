@@ -20,12 +20,12 @@ class Canvas extends Component {
     };
 
     incrementOffset() {
-        this.state.offSetX = this.state.offSetX + 90;
+        this.setState({offSetX: this.state.offSetX + 90});
         const canvas = this.canvasRef.current;
 
         if (this.state.offSetX >= canvas.width) {
-            this.state.offSetX = 40;
-            this.state.offSetY += 90;
+            this.setState({offsetX: 40});
+            this.setState({offSetY: this.state.offSetY + 90});
         }
     }
 
