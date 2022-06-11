@@ -17,9 +17,10 @@ import {
     faBrush,
     faTableCells,
     faEyeSlash,
-    faEdit,
+    faEdit
 } from "@fortawesome/free-solid-svg-icons";
 import styles from "./map.module.css";
+import Colorpicker from "../components/colorpicker"
 
 class Map extends Component {
     state = {
@@ -44,7 +45,8 @@ class Map extends Component {
         penWidth: 5,
         mapPaths: [],
         selectedMap: "",
-        canvasScale: 1.0
+        canvasScale: 1.0,
+        penColor: "#FF0000"
     };
 
     constructor(props) {
@@ -162,16 +164,17 @@ class Map extends Component {
         ctx.restore();
     }
 
-    drawPoint(x, y) {
+    drawPoint(e, x, y) {
         let overlay = this.canvasRef.current;
         let ctx = overlay.getContext("2d");
 
-        ctx.save();
         ctx.beginPath();
-        ctx.arc(x, y, this.state.penWidth, 0, 2 * Math.PI, false);
-        ctx.fillStyle = "Red";
-        ctx.fill();
-        ctx.restore();
+        ctx.moveTo(x, y);
+        ctx.lineCap = 'round';
+        ctx.lineWidth = 2;
+        ctx.lineTo(e.pageX - 5, e.pageY - 70);
+        ctx.strokeStyle = this.state.penColor;
+        ctx.stroke();
     }
 
     renderTooltip = (props, message) => (
@@ -204,7 +207,7 @@ class Map extends Component {
 
             this.setState({ imagePosAfter: { x: newXPos, y: newYPos } });
         } else if (this.state.draw === true && this.state.mousedown === true) {
-            this.drawPoint(e.clientX - 5, e.clientY - 70);
+            this.drawPoint(e, e.clientX - 5, e.clientY - 70);
         } else if (this.state.fill === true && this.state.mousedown === true) {
             this.clearArc(e.clientX + 10, e.clientY - 60, false);
         } else if (this.state.reveal === true && this.state.mousedown === true) {
@@ -217,11 +220,11 @@ class Map extends Component {
             .then((response) => response.json())
             .then((data) => {
                 let dropDowns = [];
-                data.map(m=> { 
-                    let mapName = m.replace('./public/maps/','').replace('.jpg','')
+                data.map(m => {
+                    let mapName = m.replace('./public/maps/', '').replace('.jpg', '')
                     dropDowns.push(<Dropdown.Item value={m}>{mapName}</Dropdown.Item>)
                 });
-                this.setState({mapPaths: dropDowns})
+                this.setState({ mapPaths: dropDowns })
             })
     }
 
@@ -266,7 +269,7 @@ class Map extends Component {
     }
 
     changeGridSize(e) {
-        this.setState({ canvasScale: e.target.value})
+        this.setState({ canvasScale: e.target.value })
     }
 
     render() {
@@ -304,7 +307,7 @@ class Map extends Component {
                         onHide={this.handleClose}
                     >
                         <Modal.Header className="bg-dark" closeButton>
-                            <Modal.Title>Map of {this.state.mapName}</Modal.Title>
+                            <Modal.Title>Map of {this.state.mapName} ... {this.state.penColor}</Modal.Title>
                         </Modal.Header>
                         <Modal.Body className="bg-dark overflow-hidden">
                             <div
@@ -334,7 +337,8 @@ class Map extends Component {
                             </div>
                         </Modal.Body>
                         <Modal.Footer className="bg-dark">
-                        <FontAwesomeIcon icon={faTableCells} />
+                            <Colorpicker onClick={(color) => { this.setState({penColor: color}) }}/>
+                            <FontAwesomeIcon icon={faTableCells} />
                             <input
                                 type="range"
                                 min="1"
