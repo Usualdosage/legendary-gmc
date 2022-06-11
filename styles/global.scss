@@ -11,7 +11,7 @@ $theme-colors: (
 
 $body-color: #ccc;
 
-@import '/node_modules/bootstrap/scss/mdb.free.scss';
+@import '/node_modules/mdb-ui-kit/src/scss/mdb.free.scss';
 @import '/node_modules/bootstrap/scss/bootstrap.scss';
 
 .btn-close
