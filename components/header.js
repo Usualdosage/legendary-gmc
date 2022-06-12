@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { loadActiveCampaign, deleteActiveCampaign, saveActiveCampaign } from "./utils";
+import { loadActiveCampaign, deleteActiveCampaign, saveActiveCampaign, exportCampaigns } from "./utils";
 import {
     Navbar,
     Container,
@@ -8,6 +8,7 @@ import {
     Breadcrumb,
 } from "react-bootstrap";
 import styles from "./header.module.css";
+import { Log } from "../components/logger";
 
 class Header extends Component {
     constructor(props) {
@@ -30,6 +31,18 @@ class Header extends Component {
             window.location.href = "/";
         }
     }
+
+    saveCampaignToDisk() { 
+        Log("Saving campaign to disk...");
+
+        // Save changes to current
+        var campaign = loadActiveCampaign();
+        saveActiveCampaign(campaign);
+
+        // Export all
+        let content = exportCampaigns();
+    }
+
 
     onBlur(e) {
         var campaign = loadActiveCampaign();
@@ -54,6 +67,12 @@ class Header extends Component {
                             <Nav className="me-auto">
                                 <NavDropdown title="Campaigns" id="basic-nav-dropdown">
                                     <NavDropdown.Item href="/">Campaigns</NavDropdown.Item>
+                                    <NavDropdown.Divider />
+                                    <NavDropdown.Item
+                                        onClick={() => this.saveCampaignToDisk()}
+                                    >
+                                        Save Campaigns to Disk
+                                    </NavDropdown.Item>
                                     <NavDropdown.Divider />
                                     <NavDropdown.Item
                                         className={styles.abandon_campaign}

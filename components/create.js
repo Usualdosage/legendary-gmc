@@ -49,7 +49,7 @@ class Create extends Component {
 
         localStorage.setItem("dmc_campaigns", JSON.stringify(campaigns));
 
-        window.location.href = "/gametracker";
+        window.location.href = "/playertracker";
     }
 
     render() {

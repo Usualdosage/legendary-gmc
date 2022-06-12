@@ -1,5 +1,6 @@
 import Head from "next/head";
 import SSRProvider from "react-bootstrap/SSRProvider";
+import styles from "../components/headless.module.css"
 
 export default function Headless({ children }) {
     return (
@@ -12,11 +13,11 @@ export default function Headless({ children }) {
                 </Head>
 
                 <main className="bg-dark d-flex flex-column min-vh-100 loginBanner">
-                    
                 </main>
-                <div className="px-4 py-5 my-5 text-center flex-grow-1 centerOnPage">
-                        {children}
-                    </div>
+                <div className={styles.centerOnPage}>
+                    {children}
+                </div>
+                
             </SSRProvider>
         </>
     );

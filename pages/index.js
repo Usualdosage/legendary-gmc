@@ -18,8 +18,11 @@ export default function Home({ children }) {
         <Col md={4}>
           <Card className="bg-dark campaignCard">
             <Card.Header><h4>The Game Master's Companion</h4></Card.Header>
-            <Card.Body>
+            <Card.Body>              
               <ListGroup>
+              <ListGroupItem className="bg-dark">
+                  This application is designed for use with the <a target="_blank" href="https://www.amazon.com/dp/1794769862/ref=cm_sw_em_r_mt_dp_GBH554RBEQATJB0B0MRY">Legendary</a> tabletop roleplaying game system.
+                  </ListGroupItem>
                 <ListGroupItem className="bg-dark">
                   <Create />
                 </ListGroupItem>
@@ -27,7 +30,7 @@ export default function Home({ children }) {
                   <Campaign />
                 </ListGroupItem>
                 <ListGroupItem className="bg-dark">
-                  <Load />
+                <Load />
                 </ListGroupItem>
               </ListGroup>
             </Card.Body>
