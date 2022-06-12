@@ -1,3 +1,5 @@
+/* This is UNUSED but left here for posterity */
+
 import React, { Component } from "react";
 import { getRandomNumber } from "../components/utils";
 import styles from '../components/canvas.module.css'
