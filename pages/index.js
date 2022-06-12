@@ -21,7 +21,7 @@ export default function Home({ children }) {
             <Card.Body>              
               <ListGroup>
               <ListGroupItem className="bg-dark">
-                  This application is designed for use with the <a target="_blank" href="https://www.amazon.com/dp/1794769862/ref=cm_sw_em_r_mt_dp_GBH554RBEQATJB0B0MRY">Legendary</a> tabletop roleplaying game system.
+                  This application is designed for use with the <a target="_blank" href="https://www.amazon.com/dp/1794769862/ref=cm_sw_em_r_mt_dp_GBH554RBEQATJB0B0MRY" rel="noreferrer">Legendary</a> tabletop roleplaying game system.
                   </ListGroupItem>
                 <ListGroupItem className="bg-dark">
                   <Create />
