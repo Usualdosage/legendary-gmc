@@ -23,6 +23,14 @@
     z-index: 1;
 }
 
+.paletteColor
+{
+    width: 15px;
+    height: 15px;
+    border: solid 1px #ccc;
+    border-radius: 3px;
+}
+
 .mapCanvas {
     background: none;
     width: 100%;

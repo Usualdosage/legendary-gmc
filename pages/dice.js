@@ -1,5 +1,5 @@
 import Layout from "../components/layout";
-import Canvas from "../components/canvas";
+import Dice from "../components/dice";
 import Alarms from "../components/alarms";
 
 export default function Home() {
@@ -8,7 +8,7 @@ export default function Home() {
             <Alarms />
             <div className="card bg-dark">
                 <div className="card-header">Dice Roller</div>
-                <Canvas />
+                <Dice />
             </div>
         </Layout>
     );

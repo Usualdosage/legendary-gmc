@@ -17,10 +17,13 @@ import {
     faBrush,
     faTableCells,
     faEyeSlash,
-    faEdit
+    faEdit,
+    faPalette
 } from "@fortawesome/free-solid-svg-icons";
+import Colorpicker from "./colorpicker";
 import styles from "./map.module.css";
-import Colorpicker from "../components/colorpicker"
+import { Log } from "./logger";
+
 
 class Map extends Component {
     state = {
@@ -46,7 +49,7 @@ class Map extends Component {
         mapPaths: [],
         selectedMap: "",
         canvasScale: 1.0,
-        penColor: "#FF0000"
+        penColor: "#FF0000",
     };
 
     constructor(props) {
@@ -171,7 +174,7 @@ class Map extends Component {
         ctx.beginPath();
         ctx.moveTo(x, y);
         ctx.lineCap = 'round';
-        ctx.lineWidth = 2;
+        ctx.lineWidth = this.state.penWidth;
         ctx.lineTo(e.pageX - 5, e.pageY - 70);
         ctx.strokeStyle = this.state.penColor;
         ctx.stroke();
@@ -272,6 +275,10 @@ class Map extends Component {
         this.setState({ canvasScale: e.target.value })
     }
 
+    colorPickerChange(e) {
+        this.setState({ penColor: e })
+    }
+
     render() {
         let containerStyle = {
             cursor:
@@ -307,7 +314,7 @@ class Map extends Component {
                         onHide={this.handleClose}
                     >
                         <Modal.Header className="bg-dark" closeButton>
-                            <Modal.Title>Map of {this.state.mapName} ... {this.state.penColor}</Modal.Title>
+                            <Modal.Title>Map of {this.state.mapName}</Modal.Title>
                         </Modal.Header>
                         <Modal.Body className="bg-dark overflow-hidden">
                             <div
@@ -337,7 +344,8 @@ class Map extends Component {
                             </div>
                         </Modal.Body>
                         <Modal.Footer className="bg-dark">
-                            <Colorpicker onClick={(color) => { this.setState({penColor: color}) }}/>
+                            <div className={styles.paletteColor} style={{backgroundColor: this.state.penColor}}></div>
+                            <Colorpicker color={this.state.penColor} onChange={(e) => this.colorPickerChange(e)} />
                             <FontAwesomeIcon icon={faTableCells} />
                             <input
                                 type="range"

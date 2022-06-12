@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { GithubPicker } from 'react-color';
+import { HexColorPicker } from "react-colorful";
 import {
     ToggleButton
 } from "react-bootstrap";
@@ -9,12 +9,19 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 class Colorpicker extends Component {
+    constructor(props)
+    {
+        super(props);
+    }
+
     state = {
         displayColorPicker: false,
+        pickerX: 70,
+        pickerY: 100
     };
 
-    handleClick = () => {
-        this.setState({ displayColorPicker: !this.state.displayColorPicker })
+    handleClick = (e) => {        
+        this.setState({ displayColorPicker: !this.state.displayColorPicker, pickerX: e.clientX, pickerY: e.clientY - 250 })
     };
 
     handleClose = () => {
@@ -24,9 +31,9 @@ class Colorpicker extends Component {
     render() {
         let popover = {
             position: 'absolute',
-            zIndex: '2',
-            top: '10px',
-            left: '10px'
+            top: this.state.pickerY + 'px',
+            left: this.state.pickerX + 'px',
+            zIndex: 100
         }
         let cover = {
             position: 'fixed',
@@ -36,10 +43,10 @@ class Colorpicker extends Component {
             left: '0px',
         }
         return ( <div>
-                <ToggleButton onClick={this.handleClick}><FontAwesomeIcon icon={faPalette} /></ToggleButton>
+                <ToggleButton onClick={(e) => {this.handleClick(e)}}><FontAwesomeIcon icon={faPalette}/></ToggleButton>
                 {this.state.displayColorPicker ? <div style={popover}>
                     <div style={cover} onClick={this.handleClose} />
-                    <GithubPicker />
+                    <HexColorPicker onChange={this.props.onChange}/>
                 </div> : <div/>}
             </div>
         )        

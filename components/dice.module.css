@@ -1,0 +1,54 @@
+.dieBlock
+{
+    min-width: 120px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    height: 90px;    
+    cursor: pointer;
+}
+
+.modifier{
+    border: solid 1px #ccc;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 3px #222;
+}
+
+.dieBlock > img
+{
+    filter: drop-shadow(5px 5px 5px #222);
+    width: 70px;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    vertical-align: middle;
+}
+
+.buttonArea
+{
+    margin: 10px;
+    width: 100%;
+}
+
+.diceArea
+{
+    width: 100%;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px #222;
+    margin-top: 40px;
+    min-height: 400px;
+    padding: 10px;
+}
+
+.buttonGroup
+{
+    margin-right: 5px;
+}
+
+.totalScore
+{
+    margin: 10px;
+}

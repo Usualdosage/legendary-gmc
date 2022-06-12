@@ -14,13 +14,90 @@ $body-color: #ccc;
 @import '/node_modules/mdb-ui-kit/src/scss/mdb.free.scss';
 @import '/node_modules/bootstrap/scss/bootstrap.scss';
 
-.btn-close
-{
+.dieNumber {
+  position: absolute;
+  color: #000;
+  z-index: 10;
+  text-align: center;
+  width: 100%;
+  text-shadow: 1px 1px #eee, -1px -1px #444;
+}
+
+.dieLeft {
+  display: block;
+  width: 25px;
+  left: -13px;
+  position: absolute;
+}
+
+.dieRight {
+  display: block;
+  width: 25px;
+  left: 58px;
+  position: absolute;
+}
+
+.die100 {
+  width: 150px !important;
+}
+
+.die2 {
+  width: 100px !important;
+  height: 100px;
+}
+
+.die_sides_100 {
+  font-size: 20px;
+  top: 20px;
+  left: 40px;
+}
+
+.die_sides_20 {
+  font-size: 16px;
+  top: 26px;
+}
+
+.die_sides_12 {
+  font-size: 20px;
+  top: 21px;
+}
+
+.die_sides_10 {
+  font-size: 25px;
+  top: 16px;
+}
+
+.die_sides_8 {
+  font-size: 29px;
+  top: 18px;
+}
+
+.die_sides_6 {
+  font-size: 30px;
+  top: 13px;
+}
+
+.die_sides_4 {
+  font-size: 26px;
+  top: 24px;
+}
+
+.die_sides_2 {
+  font-size: 16px;
+  top: 36px;
+  position: absolute;
+  color: #000;
+  z-index: 10;
+  text-align: center;
+  width: 100%;
+  text-shadow: 1px 1px #eee, -1px -1px #444;
+}
+
+.btn-close {
   color: #ccc !important;
 }
 
-.loginBanner
-{
+.loginBanner {
   background-image: url('/img/Mystra.jpg');
   background-size: cover;
   background-position: center;
@@ -29,8 +106,7 @@ $body-color: #ccc;
   transition: all .3s;
 }
 
-.loginBanner:hover
-{
+.loginBanner:hover {
   background-image: url('/img/Mystra.jpg');
   background-size: cover;
   filter: none;
@@ -39,8 +115,7 @@ $body-color: #ccc;
   transition: all .3s;
 }
 
-.campaignCard
-{
+.campaignCard {
   position: absolute;
   top: 200px;
   margin-left: auto;

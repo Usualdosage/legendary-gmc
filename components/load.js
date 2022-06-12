@@ -1,4 +1,3 @@
-import { faRulerVertical } from "@fortawesome/free-solid-svg-icons";
 import React, { Component } from "react";
 import { Button } from "react-bootstrap";
 import { Log } from "../components/logger"
