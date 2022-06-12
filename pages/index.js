@@ -3,11 +3,11 @@ import {
   Col,
   Card,
   ListGroup,
-  ListGroupItem,
-  Button,
+  ListGroupItem
 } from "react-bootstrap";
 import Campaign from "../components/campaign";
 import Create from "../components/create";
+import Load from "../components/load"
 import Headless from "../components/headless";
 
 export default function Home({ children }) {
@@ -26,9 +26,12 @@ export default function Home({ children }) {
                 <ListGroupItem className="bg-dark">
                   <Campaign />
                 </ListGroupItem>
+                <ListGroupItem className="bg-dark">
+                  <Load />
+                </ListGroupItem>
               </ListGroup>
             </Card.Body>
-            <Card.Footer>&copy;2022 by Matthew Martin</Card.Footer>
+            <Card.Footer>&copy;2022 by Matthew Martin. <a href="https://www.github.com/usualdosage/legendary-gmc">Source Code</a></Card.Footer>
           </Card>
         </Col>
       </Row>
