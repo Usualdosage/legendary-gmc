@@ -50,6 +50,11 @@ class Needs extends Component {
 
         this.checkNeeds(campaign.needs);
 
+        setInterval(() => { 
+            const campaign = loadActiveCampaign();
+            this.checkNeeds(campaign.needs)
+        }, 5000);
+
         setInterval(() => {
             // Get the saved campaign
             const campaign = loadActiveCampaign();
@@ -266,18 +271,6 @@ class Needs extends Component {
                                 className="btn btn-small btn-primary btn-sm"
                             >
                                 <FontAwesomeIcon icon={faBedPulse} />
-                            </Button>
-                        </OverlayTrigger>
-                        <OverlayTrigger
-                            placement="right"
-                            delay={{ show: 250, hide: 400 }}
-                            overlay={this.renderTooltip(null, "Check needs.")}
-                        >
-                            <Button
-                                onClick={() => this.refreshNeeds()}
-                                className="btn btn-small btn-primary btn-sm"
-                            >
-                                <FontAwesomeIcon icon={faRefresh} />
                             </Button>
                         </OverlayTrigger>
                     </ButtonGroup>

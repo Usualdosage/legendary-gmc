@@ -12,7 +12,8 @@ export default function Headless({ children }) {
                     <link rel="icon" href="/favicon.ico" />
                 </Head>
 
-                <main className="bg-dark d-flex flex-column min-vh-100 loginBanner">
+                <main className={["bg-dark","d-flex","flex-column", styles.loginBanner].join(' ')}>
+               
                 </main>
                 <div className={styles.centerOnPage}>
                     {children}

@@ -1,14 +1,45 @@
-.dieBlock
-{
+.dieBlock {
     min-width: 120px;
     position: relative;
     display: inline-block;
     text-align: center;
-    height: 90px;    
+    height: 90px;
     cursor: pointer;
 }
 
-.modifier{
+.dieNumber {
+    position: absolute;
+    color: #000;
+    z-index: 10;
+    text-align: center;
+    width: 100%;
+    text-shadow: 1px 1px #eee, -1px -1px #444;
+}
+
+.dieLeft {
+    display: block;
+    width: 25px;
+    left: -13px;
+    position: absolute;
+}
+
+.dieRight {
+    display: block;
+    width: 25px;
+    left: 58px;
+    position: absolute;
+}
+
+.die100 {
+    width: 150px !important;
+}
+
+.die2 {
+    width: 100px !important;
+    height: 100px;
+}
+
+.modifier {
     border: solid 1px #ccc;
     margin: 5px;
     padding: 5px;
@@ -16,8 +47,7 @@
     box-shadow: 3px 3px 3px #222;
 }
 
-.dieBlock > img
-{
+.dieBlock>img {
     filter: drop-shadow(5px 5px 5px #222);
     width: 70px;
     display: inline-block;
@@ -26,14 +56,12 @@
     vertical-align: middle;
 }
 
-.buttonArea
-{
+.buttonArea {
     margin: 10px;
     width: 100%;
 }
 
-.diceArea
-{
+.diceArea {
     width: 100%;
     border: solid 1px #ccc;
     border-radius: 5px;
@@ -43,12 +71,10 @@
     padding: 10px;
 }
 
-.buttonGroup
-{
+.buttonGroup {
     margin-right: 5px;
 }
 
-.totalScore
-{
+.totalScore {
     margin: 10px;
 }

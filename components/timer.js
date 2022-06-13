@@ -62,6 +62,10 @@ class Timer extends Component {
                 .substr(11, 8);
             this.elapsedRef.current.innerText = formatted;
 
+            this.elapsedHHRef.current.value = timer.hh;
+            this.elapsedMMRef.current.value = timer.mm;
+            this.elapsedSSRef.current.value = timer.ss;
+            
             if (timer.isStarted) {
                 this.toggleTimer(this.props.timerIndex, 0);
             }
@@ -90,9 +94,18 @@ class Timer extends Component {
         let campaign = loadActiveCampaign();
 
         if (campaign.timers != null) {
+            
             let timer = campaign.timers[this.props.timerIndex];
+
+            var hh = this.elapsedHHRef.current.value || 0;
+            var mm = this.elapsedMMRef.current.value || 0;
+            var ss = this.elapsedSSRef.current.value || 0;
+
             timer.name = this.inputRef.current.value;
-            timer[this.props.timerIndex] = timer;
+            timer.hh = hh;
+            timer.mm = mm;
+            timer.ss = ss;
+
             campaign.timers[this.props.timerIndex] = timer;
             saveActiveCampaign(campaign);
         }
@@ -194,13 +207,13 @@ class Timer extends Component {
                     <fieldset>
                         <Row>
                             <Col md={4}>
-                                <input type="number" ref={this.elapsedHHRef} placeholder="HH" />
+                                <input type="number" onBlur={() => this.setTimer()} ref={this.elapsedHHRef} placeholder="HH" />
                             </Col>
                             <Col md={4}>
-                                <input type="number" ref={this.elapsedMMRef} placeholder="MM" />
+                                <input type="number" onBlur={() => this.setTimer()} ref={this.elapsedMMRef} placeholder="MM" />
                             </Col>
                             <Col md={4}>
-                                <input type="number" ref={this.elapsedSSRef} placeholder="SS" />
+                                <input type="number" onBlur={() => this.setTimer()} ref={this.elapsedSSRef} placeholder="SS" />
                             </Col>
                         </Row>
                     </fieldset>

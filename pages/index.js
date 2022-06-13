@@ -9,14 +9,13 @@ import Campaign from "../components/campaign";
 import Create from "../components/create";
 import Load from "../components/load"
 import Headless from "../components/headless";
+import styles from "./index.module.css"
 
-export default function Home({ children }) {
+export default function Home() {
   return (
     <Headless>
-      <Row>
-        <Col md={4}></Col>
-        <Col md={4}>
-          <Card className="bg-dark campaignCard">
+      
+          <Card className={[styles.campaignCard, "bg-dark"].join(' ')}>
             <Card.Header><h4>The Game Master's Companion</h4></Card.Header>
             <Card.Body>              
               <ListGroup>
@@ -36,8 +35,7 @@ export default function Home({ children }) {
             </Card.Body>
             <Card.Footer>&copy;2022 by Matthew Martin. <a href="https://www.github.com/usualdosage/legendary-gmc">Source Code</a></Card.Footer>
           </Card>
-        </Col>
-      </Row>
+        
     </Headless>
   );
 }

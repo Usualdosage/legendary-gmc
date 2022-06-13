@@ -14,37 +14,8 @@ $body-color: #ccc;
 @import '/node_modules/mdb-ui-kit/src/scss/mdb.free.scss';
 @import '/node_modules/bootstrap/scss/bootstrap.scss';
 
-.dieNumber {
-  position: absolute;
-  color: #000;
-  z-index: 10;
-  text-align: center;
-  width: 100%;
-  text-shadow: 1px 1px #eee, -1px -1px #444;
-}
 
-.dieLeft {
-  display: block;
-  width: 25px;
-  left: -13px;
-  position: absolute;
-}
 
-.dieRight {
-  display: block;
-  width: 25px;
-  left: 58px;
-  position: absolute;
-}
-
-.die100 {
-  width: 150px !important;
-}
-
-.die2 {
-  width: 100px !important;
-  height: 100px;
-}
 
 .die_sides_100 {
   font-size: 20px;
@@ -97,32 +68,6 @@ $body-color: #ccc;
   color: #ccc !important;
 }
 
-.loginBanner {
-  background-image: url('/img/Mystra.jpg');
-  background-size: cover;
-  background-position: center;
-  filter: blur(5px);
-  -webkit-filter: blur(5px);
-  transition: all .3s;
-}
-
-.loginBanner:hover {
-  background-image: url('/img/Mystra.jpg');
-  background-size: cover;
-  filter: none;
-  background-position: center;
-  -webkit-filter: none;
-  transition: all .3s;
-}
-
-.campaignCard {
-  position: absolute;
-  top: 200px;
-  margin-left: auto;
-  margin-right: auto;
-  box-shadow: 3px 3px 6px #000;
-}
-
 #diceContainer {
   height: 35vh;
 }
@@ -130,6 +75,15 @@ $body-color: #ccc;
 input[type=number] {
   width: 100%;
   text-align: center;
+}
+
+a, a:visited{
+  color: paleturquoise;
+}
+
+.dropdown-item
+{
+  color: #333 !important;
 }
 
 fieldset {

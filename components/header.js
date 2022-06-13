@@ -7,6 +7,10 @@ import {
     NavDropdown,
     Breadcrumb,
 } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+    faQuestionCircle
+} from "@fortawesome/free-solid-svg-icons";
 import styles from "./header.module.css";
 import { Log } from "../components/logger";
 
@@ -106,7 +110,9 @@ class Header extends Component {
                                     <span className="breadcrumb-loc" ref={this.crumbRef}></span>
                                 </Breadcrumb.Item>
                             </Breadcrumb>
+                            <a alt="Access the help section" className={styles.helpLink} href ="/help"><FontAwesomeIcon icon={faQuestionCircle}></FontAwesomeIcon></a>
                         </Navbar.Collapse>
+                        
                     </Container>
                 </Navbar>
                 <div className="bg-dark px-4 py-1 my-1 text-center flex-grow-1">

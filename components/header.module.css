@@ -26,3 +26,11 @@
     text-align: center;
     width: 100%;
 }
+
+.helpLink
+{
+    padding: 10px;
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+}

@@ -16,21 +16,22 @@ class Alarms extends Component {
                 for (let x = 0, timer;
                     (timer = campaign.timers[x]); x++) {
                     if (timer.isStarted) {
-                        if (timer.value >= timer.maxValue) {
-                            timer.isStarted = false;
-                            this.toastRef.current.className = styles.toastAlert;
-                            this.toastRef.current.innerHTML =
-                                "Timer '" +
-                                timer.name +
-                                '\' has elapsed. <a href="/timers">Click here</a> to view timers.';
+                        if (timer.value > 1 && (timer.value % timer.maxValue === 0)) {
 
+                            if (this.toastRef.current != null) {
+                                this.toastRef.current.className = styles.toastAlert;
+                                this.toastRef.current.innerHTML =
+                                    "Timer '" +
+                                    timer.name +
+                                    '\' has elapsed. <a href="/timers">Click here</a> to view timers.';
+                            }
                             // Play a sound
                             let audio = new Audio("/audio/chime.mp3");
                             audio.play();
 
                             setTimeout(() => {
                                 this.toastRef.current.className = "hidden";
-                            }, 10000);
+                            }, 5000);
                         } else {
                             timer.value += 1;
                         }
@@ -43,8 +44,8 @@ class Alarms extends Component {
     }
 
     render() {
-        return <div ref = { this.toastRef }
-        className = "hidden"> </div>;
+        return <div ref={this.toastRef}
+            className="hidden"> </div>;
     }
 }
 

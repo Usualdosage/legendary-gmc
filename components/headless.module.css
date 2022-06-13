@@ -1,4 +1,30 @@
 .centerOnPage
 {
+    position: absolute;
+    top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
     text-align: center;
+    z-index: 50;
 }
+
+.loginBanner {
+    background-image: url('/img/Mystra.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+    transition: all .3s;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+  }
+  
+  .loginBanner:hover {
+    background-image: url('/img/Mystra.jpg');
+    background-size: cover;
+    filter: none;
+    background-position: center;
+    -webkit-filter: none;
+    transition: all .3s;
+  }

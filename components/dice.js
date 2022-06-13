@@ -90,7 +90,7 @@ class Dice extends Component {
 
             this.setState({ totalScore: this.state.totalScore + num, lastRoll: num });
 
-            result = <div><span className="dieLeft">{left}</span><span className="dieRight">{right}</span></div>;
+            result = <div><span className={styles.dieLeft}>{left}</span><span className={styles.dieRight}>{right}</span></div>;
         }
         else // D2-D20
         {

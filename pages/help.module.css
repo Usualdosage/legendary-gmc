@@ -1,0 +1,18 @@
+.helpSection
+{
+    text-align: left;
+    padding: 10px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.helpSection h3
+{
+    margin-left: 10px;
+}
+
+.helpLink
+{
+    color: paleturquoise;
+}
