@@ -296,7 +296,7 @@ class Map extends Component {
             transform: "scale(" + this.state.canvasScale + ")",
         }
         return (
-            <Row centered>
+            <Row centered="true">
                 <Col md={12}>
                     <Dropdown onSelect={this.showMap}>
                         <Dropdown.Toggle variant="primary" id="dropdown-basic">

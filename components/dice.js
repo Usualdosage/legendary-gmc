@@ -81,7 +81,7 @@ class Dice extends Component {
                 audio.play();
             }
             // FAIL!
-            else if (roll === 1 && sides != 2) {
+            else if (num === 1 && sides != 2) {
                 let audio = new Audio("/audio/fail.mp3");
                 audio.play();
             }
