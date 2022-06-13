@@ -219,12 +219,12 @@ class Map extends Component {
     }
 
     getMaps() {
-        fetch('/api/listMaps')
+        fetch('./maps/maps.json')
             .then((response) => response.json())
             .then((data) => {
                 let dropDowns = [];
                 data.map(m => {
-                    let mapName = m.replace('./public/maps/', '').replace('.jpg', '')
+                    let mapName = m.replace('.jpg', '')
                     dropDowns.push(<Dropdown.Item value={m}>{mapName}</Dropdown.Item>)
                 });
                 this.setState({ mapPaths: dropDowns })
