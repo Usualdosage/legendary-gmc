@@ -146,7 +146,7 @@ export class Room extends Component {
     const checked = e === true ? true : e.target.checked;
  
     if (this.state.selectedRoom === null) {
-      this.state.selectedRoom = { exits: [] };
+      this.setState({selectedRoom: { exits: [] }});
     }
  
     let array =

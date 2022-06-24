@@ -99,7 +99,6 @@ class NavBar extends Component {
                                 <span className="breadcrumb-loc" ref={this.crumbRef}></span>
                             </Breadcrumb.Item>
                         </Breadcrumb>
-                        <a alt="Access the help section" className={styles.helpLink} href="/help"><FontAwesomeIcon icon={faQuestionCircle}></FontAwesomeIcon></a>
                     </Navbar.Collapse>
 
                 </Container>
