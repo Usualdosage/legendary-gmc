@@ -13,11 +13,13 @@ class Alarms extends Component {
             let campaign = loadActiveCampaign();
 
             if (campaign.timers != null) {
-                for (let x = 0, timer;
-                    (timer = campaign.timers[x]); x++) {
+                for (let x = 0, timer; timer = campaign.timers[x]; x++) {                    
                     if (timer.isStarted) {
-                        if (timer.value > 1 && (timer.value % timer.maxValue === 0)) {
+                        //console.table(timer);
+                        // If this is an interval timer, see if we have met the interval.
+                        if (timer.maxValue > 0 && timer.value > 1 && (timer.value % timer.maxValue === 0)) {
 
+                            // Show the toast.
                             if (this.toastRef.current != null) {
                                 this.toastRef.current.className = styles.toastAlert;
                                 this.toastRef.current.innerHTML =
@@ -25,17 +27,21 @@ class Alarms extends Component {
                                     timer.name +
                                     '\' has elapsed. <a href="/timers">Click here</a> to view timers.';
                             }
+
                             // Play a sound
                             let audio = new Audio("/audio/chime.mp3");
                             audio.play();
 
+                            // Hide the toast after 5 seconds.
                             setTimeout(() => {
                                 this.toastRef.current.className = "hidden";
                             }, 5000);
-                        } else {
-                            timer.value += 1;
-                        }
+                        } 
+
+                        // Increment the timer.
+                        timer.value += 1;    
                     }
+
                     campaign.timers[x] = timer;
                 }
                 saveActiveCampaign(campaign);

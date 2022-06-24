@@ -14,7 +14,6 @@ import styles from "./index.module.css"
 export default function Home() {
   return (
     <Headless>
-      
           <Card className={[styles.campaignCard, "bg-dark"].join(' ')}>
             <Card.Header><h4>The Game Master's Companion</h4></Card.Header>
             <Card.Body>              
@@ -35,7 +34,6 @@ export default function Home() {
             </Card.Body>
             <Card.Footer>&copy;2022 by Matthew Martin. <a href="https://www.github.com/usualdosage/legendary-gmc">Source Code</a></Card.Footer>
           </Card>
-        
     </Headless>
   );
 }

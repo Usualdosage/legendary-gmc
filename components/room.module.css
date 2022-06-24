@@ -1,0 +1,65 @@
+.roomContainer
+{
+    background-image: linear-gradient(to right, #ccc , #666);
+    border: solid 1px #ccc;
+    border-radius: 3px;
+    height: 100%;
+    width: 100%;
+    margin: 2px;
+    cursor: pointer;
+}
+ 
+.roomContainerActive
+{
+    background-color: #666;
+    border: solid 1px Red;
+    border-radius: 3px;
+    height: 100%;
+    width: 100%;
+    margin: 2px;
+}
+ 
+.roomTitle
+{
+    width: 100%;
+}
+ 
+.modalTitle
+{
+    width: 100%;
+}
+ 
+.textArea
+{
+    width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+}
+ 
+.formRow
+{
+    padding: 5px;
+}
+ 
+.formFooter
+{
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: solid 1px #ccc;
+}
+ 
+.upload
+{
+    display: none;
+}
+ 
+.uploadButton
+{
+    margin-top: 5px;
+}

@@ -24,7 +24,7 @@ class Time extends Component {
     }
 
     componentDidMount() {
-        // Get the saved date object
+        // Get the saved campaign object
         let campaign = loadActiveCampaign();
 
         // If we have don't have a saved date, randomize one

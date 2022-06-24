@@ -9,7 +9,7 @@ export default function Home() {
     let timers = [];
     for (let x = 0; x < MAX_TIMERS; x++) {
         timers.push(
-            <Col xs={3} md={3}>
+            <Col xs={3} md={3} lg={3}>
                 <Timer timerIndex={x} text="Start" />
             </Col>
         );
@@ -17,7 +17,7 @@ export default function Home() {
     return (
         <Layout>
             <Alarms />
-            <Row className="show-grid">{timers}</Row>
+            <Row>{timers}</Row>
         </Layout>
     );
 }

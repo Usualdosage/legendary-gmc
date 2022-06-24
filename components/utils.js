@@ -107,3 +107,13 @@ export function saveActiveCampaign(campaign) {
 export function getRandomNumber(max) {
   return Math.floor(Math.random() * max) + 1;
 }
+
+/**
+ * For a given number of seconds, will return an time like HH:MM:SS.
+ */
+export function formatTime(seconds) {
+      const formatted = new Date(seconds * 1000)
+          .toISOString()
+          .substr(11, 8);
+      return formatted;
+};

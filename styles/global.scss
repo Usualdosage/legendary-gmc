@@ -133,3 +133,78 @@ textarea {
   font-size: .6em;
   color: #ccc;
 }
+
+.roomContainer
+{
+    background-image: linear-gradient(to right, #ccc , #666);
+    border: solid 1px #ccc;
+    border-radius: 3px;
+    height: 100%;
+    width: 100%;
+    margin: 2px;
+    cursor: pointer;
+}
+ 
+.roomContainerActive
+{
+    background-color: #666;
+    border: solid 1px Red;
+    border-radius: 3px;
+    height: 100%;
+    width: 100%;
+    margin: 2px;
+}
+ 
+.exitNorth
+{
+    border-top: solid 1px Blue !important;
+}
+ 
+.exitSouth
+{
+    border-bottom: solid 1px Blue !important;
+}
+ 
+.exitEast
+{
+    border-right: solid 1px Blue !important;
+}
+ 
+.exitWest
+{
+    border-left: solid 1px Blue !important;
+}
+ 
+.exitUp
+{
+    background-color: cyan;
+}
+ 
+.exitDown
+{
+    background-color: black;
+}
+ 
+.exitNE
+{
+    border-top: solid 1px Orange !important;
+    border-right: solid 1px Orange !important;
+}
+ 
+.exitNW
+{
+    border-top: solid 1px Orange !important;
+    border-left: solid 1px Orange !important;
+}
+ 
+.exitSE
+{
+    border-bottom: solid 1px Orange !important;
+    border-right: solid 1px Orange !important;
+}
+ 
+.exitSW
+{
+    border-bottom: solid 1px Orange !important;
+    border-left: solid 1px Orange !important;
+}
